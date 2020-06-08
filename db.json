@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 7
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 10
     },
     {
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 7
     },
     {
       "id": 4,
@@ -47,6 +47,36 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Gus",
+      "image": "https://vignette.wikia.nocookie.net/pixar/images/c/c6/AF65ED91-5758-45FC-AE51-0F67C69E757C.png/revision/latest/top-crop/width/360/height/360?cb=20181207000801",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "Teddy",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51OD9x5xhFL._SY355_.jpg",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "Gus 2",
+      "image": "https://vignette.wikia.nocookie.net/psychtv/images/5/52/Gus.png/revision/latest/scale-to-width-down/340?cb=20090302084114",
+      "likes": 0,
+      "id": 11
+    },
+    {
+      "name": "Gus 3",
+      "image": "https://vignette.wikia.nocookie.net/psychtv/images/5/52/Gus.png/revision/latest/scale-to-width-down/340?cb=20090302084114",
+      "likes": 0,
+      "id": 12
+    },
+    {
+      "name": "Gus 4",
+      "image": "https://vignette.wikia.nocookie.net/psychtv/images/5/52/Gus.png/revision/latest/scale-to-width-down/340?cb=20090302084114",
+      "likes": 0,
+      "id": 13
     }
   ]
 }
