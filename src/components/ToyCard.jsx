@@ -34,7 +34,7 @@ class ToyCard extends Component {
     }
       fetch(`http://localhost:3000/toys/${this.props.id}`,options) 
       .then( res => res.json() )
-      .then( () => this.props.reRender() )
+      .then(this.props.reRender)
     }
   
 
