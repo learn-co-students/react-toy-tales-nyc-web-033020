@@ -14,13 +14,6 @@ class App extends React.Component{
     display: false,
   }
 
-  handleNameChange = (event) => {
-    console.log(event.target)
-  }
-
-  handleImageChange = (event) => {
-    console.log(event.target)
-  }
 
   handleClick = () => {
     let newBoolean = !this.state.display
