@@ -21,8 +21,7 @@ class ToyCard extends Component {
     
     fetch(`http://localhost:3000/toys/${this.props.id}`, options)
     .then(res => res.json())
-    // not rerendering properly on page/likes not persisting to database
-    .then(this.setState({likes: this.state.likes+1})
+    .then(this.setState({likes: incrementLikeCount})
   )}
 
   clickDelete = () => {
