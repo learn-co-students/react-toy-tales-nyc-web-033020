@@ -11,6 +11,7 @@ import data from './data'
 class App extends React.Component{
 
   state = {
+    toys: [],
     display: false,
   }
 
@@ -22,6 +23,19 @@ class App extends React.Component{
     })
   }
 
+  fetchAllToys = () => {
+    fetch('http://localhost:3000/toys')
+    .then(res => res.json())
+    .then(toys => {
+      this.setState({toys})
+    })
+  }
+  
+
+  componentDidMount(){
+    this.fetchAllToys()
+  }
+
   render(){
     return (
       <>
@@ -29,8 +43,7 @@ class App extends React.Component{
         { this.state.display
             ?
           <ToyForm 
-            handleNameChange={this.handleNameChange}
-            handleImageChange={this.handleImageChange}
+            reRender = {this.fetchAllToys}
           />
             :
           null
@@ -38,7 +51,7 @@ class App extends React.Component{
         <div className="buttonContainer">
           <button onClick={this.handleClick}> Add a Toy </button>
         </div>
-        <ToyContainer toy={data}/>
+        <ToyContainer toy={this.state.toys}/>
       </>
     );
   }
