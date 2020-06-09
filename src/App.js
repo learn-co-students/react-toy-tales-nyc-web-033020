@@ -11,7 +11,15 @@ import data from './data'
 class App extends React.Component{
 
   state = {
-    display: false
+    display: false,
+  }
+
+  handleNameChange = (event) => {
+    console.log(event.target)
+  }
+
+  handleImageChange = (event) => {
+    console.log(event.target)
   }
 
   handleClick = () => {
@@ -27,14 +35,17 @@ class App extends React.Component{
         <Header/>
         { this.state.display
             ?
-          <ToyForm/>
+          <ToyForm 
+            handleNameChange={this.handleNameChange}
+            handleImageChange={this.handleImageChange}
+          />
             :
           null
         }
         <div className="buttonContainer">
           <button onClick={this.handleClick}> Add a Toy </button>
         </div>
-        <ToyContainer/>
+        <ToyContainer toy={data}/>
       </>
     );
   }
@@ -42,3 +53,7 @@ class App extends React.Component{
 }
 
 export default App;
+
+// <ToyContainer toy={data}/>
+// toy is the name of the prop passed to the ToyContainer
+// so now within ToyContainer we must use prop.toy to reference the data
