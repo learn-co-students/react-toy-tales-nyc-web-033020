@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 45
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 22
     },
     {
       "id": 3,
@@ -77,12 +77,6 @@
       "image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fgamepedia.cursecdn.com%2Fworldofmayhem_gamepedia_en%2Fthumb%2F2%2F2b%2FBugs_Bunny.png%2F1200px-Bugs_Bunny.png&imgrefurl=https%3A%2F%2Fworldofmayhem.gamepedia.com%2FBugs_Bunny&tbnid=fpnWqBZr00xsFM&vet=12ahUKEwj18dzb8_PpAhWBZ98KHXmKA_AQMygDegUIARDlAQ..i&docid=3ie2hdTHHTigXM&w=1200&h=1227&q=bugs%20bunny&ved=2ahUKEwj18dzb8_PpAhWBZ98KHXmKA_AQMygDegUIARDlAQ",
       "likes": 0,
       "id": 13
-    },
-    {
-      "name": "Bugs Bunny",
-      "image": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fgamepedia.cursecdn.com%2Fworldofmayhem_gamepedia_en%2Fthumb%2F2%2F2b%2FBugs_Bunny.png%2F1200px-Bugs_Bunny.png&imgrefurl=https%3A%2F%2Fworldofmayhem.gamepedia.com%2FBugs_Bunny&tbnid=fpnWqBZr00xsFM&vet=12ahUKEwj18dzb8_PpAhWBZ98KHXmKA_AQMygDegUIARDlAQ..i&docid=3ie2hdTHHTigXM&w=1200&h=1227&q=bugs%20bunny&ved=2ahUKEwj18dzb8_PpAhWBZ98KHXmKA_AQMygDegUIARDlAQ",
-      "likes": 0,
-      "id": 14
     },
     {
       "name": "Boooii",
