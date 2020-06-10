@@ -9,7 +9,7 @@ class ToyCard extends Component {
         <h2>{name}</h2>
         <img src={image} alt={name} className="toy-avatar" />
         <p> Likes </p>
-        <button className="like-btn" onClick={()=>addLikes(id)}> {likes}Like {'<3'}</button>
+        <button className="like-btn" onClick={()=>addLikes(id,likes)}> {likes}Like {'<3'}</button>
         <button className="del-btn" onClick={()=>deleteToy(id)}>Donate to GoodWill </button>
       </div>
     );

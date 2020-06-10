@@ -6,18 +6,23 @@ import ToyForm from './components/ToyForm'
 import ToyContainer from './components/ToyContainer'
 
 import data from './data'
-import toyData from './data';
+// import toyData from './data';
 
-
+// const jsonPOST = require('json-post');
 class App extends React.Component{
 
   state = {
     display: false,
-    toys:toyData,
+    toys:[],
     name:'',
     image: '',
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/toys')
+    .then(r=>r.json())
+    .then(data=> this.setState({toys:data}))
+  }
   handleClick = () => {
     let newBoolean = !this.state.display
     this.setState({
@@ -27,34 +32,59 @@ class App extends React.Component{
 
   changeHandler  = e => {
     this.setState({[e.target.name]: e.target.value})
+    
   }
-
+  
   submitHandler = e => {
     e.preventDefault()
     let newToy = {
       name: this.state.name,
-      image: this.state.image
+      image: this.state.image,
+      likes:0 
     }
-    this.setState({toys: [...this.state.toys, newToy]})
+    fetch('http://localhost:3000/toys',{
+      method: "POST",
+      headers:{"Content-Type": "application/json"},
+      body:JSON.stringify(newToy)
+    })
+    .then(r=>r.json())
+    .then(data=>{
+    this.setState({toys: [...this.state.toys,data]}) 
+    this.setState({name:'',image:''})
+    })
   }
 
 
   deleteToy = (id) => {
-    let toyToRender = this.state.toys.filter(toy=> toy.id !== id)
-    this.setState({toys: toyToRender})
+    let updatedToys= [...this.state.toys]
+    this.setState({ toys: updatedToys.filter(toy => toy.id !== id)})
+    fetch(`http://localhost:3000/toys/${id}`,{
+      method: "DELETE",      
+    })
+  
+
   }
 
-  addLikes = (id) => {
-    let targetToy= this.state.toys.find(toy=> toy.id === id )
-    let curLike = targetToy.likes 
-    targetToy.likes = curLike + 1
-    let updatedtoys = this.state.toys
-    updatedtoys[id-1] = targetToy
-    this.setState({toys: updatedtoys})
+  addLikes = (id,likes) => {
+    let newLikes = likes + 1
+    fetch(`http://localhost:3000/toys/${id}`,{
+      method:"PATCH",
+      headers:{"Content-Type": "application/json"},
+      body:JSON.stringify({likes:newLikes})
+      })
+      .then(r=>r.json())
+      .then(data=>{    
+        let target = this.state.toys.find(toy=> toy.id === id)
+        let index = this.state.toys.indexOf(target)
+        let updatedToys = [...this.state.toys]
+        updatedToys[index] = data
+        this.setState({toys: updatedToys})
+
+      })
   }
 
   render(){
-    console.log(this.state)
+
     return (
       <>
         <Header/>
