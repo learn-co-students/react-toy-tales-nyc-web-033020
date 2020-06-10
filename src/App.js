@@ -38,19 +38,14 @@ class App extends React.Component{
     )
   }
 
-  likeToy = (toyId, newlikes) => {
-    // this.setState(prevState => {
-    //   const updatedToy = prevState.toys.find(toy => toy.id === toyId)
-    //   const updatedToyIndex = prevState.toys.findByIndex(toy => toy.id === toyId)
-    //   return {
-    //     ...prevState, toys:{
-    //       ...prevState.toys.filter(toy=> toy.id !== toyId), updatedToy:{
-    //         likes: newlikes
-    //       }
-    //     }
-    //   }
-    // }
-    // )
+  likeToy = (toyId, newLikes) => {
+    this.setState(prevState => {
+      return { 
+        ...prevState, 
+        toys: prevState.toys.map(toy=> toy.id !== toyId ? {...toy} : {...toy, likes: newLikes}) 
+      }
+    }
+    )
 
     fetch(`http://localhost:3000/toys/${toyId}`,{
       method: "PATCH",
@@ -59,18 +54,19 @@ class App extends React.Component{
             Accept: "application/json"
       },
       body: JSON.stringify({
-        likes: newlikes
+        likes: newLikes
       })
     })
     .then(resp => resp.json())
     .then(newToy => {
-      const oldToy = this.state.toys.find(toy=> toy.id === toyId)
-      const oldToyIndex = this.state.toys.indexOf(oldToy)
-      let updatedToys = [...this.state.toys]
-      updatedToys[oldToyIndex] = newToy
-      this.setState({
-        toys: updatedToys
-      })
+      console.log(newToy)
+      // const oldToy = this.state.toys.find(toy=> toy.id === toyId)
+      // const oldToyIndex = this.state.toys.indexOf(oldToy)
+      // let updatedToys = [...this.state.toys]
+      // updatedToys[oldToyIndex] = newToy
+      // this.setState({
+      //   toys: updatedToys
+      // })
     })
   }
 
